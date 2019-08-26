@@ -1,0 +1,145 @@
+#body{
+	background-color: #e0e0d1;
+	padding: 20px;
+}
+	
+#header{
+	border-radius: 20px;
+	padding: 1px;
+	background-color: white;
+	text-align: left;
+	font-size: 2em;
+	position: relative;
+	z-index: 1;
+}
+
+#nav{
+	border-radius: 20px;
+	padding: 20px;
+	background-color: white;
+	text-align: left;
+	float: center;
+	position: relative;
+	z-index: 1;
+}
+
+#content{
+	font-size: 18px;
+	border-radius: 20px;
+	padding: 20px;
+	background-color: white;
+	text-align: center;
+	float: center;
+	position: relative;
+	z-index: 1;
+}
+
+#sidecon{
+	font-size: 18px;
+	border-radius: 20px;
+	padding: 20px;
+	background-color: white;
+	text-align: left;
+	float: center;
+	position: relative;
+	z-index: 1;
+}
+
+#footer{
+	border-radius: 20px;
+	padding: 20px;
+	background-color: white;
+	text-align: center;
+}
+	
+#contactNav{
+	border-radius: 20px;
+	padding: 20px;
+	background-color: white;
+	text-align: left;
+	float: center;
+	position: relative;
+	z-index: 1;
+	padding-bottom: 100px
+}
+
+#navlist{
+	list-style-type: none;
+	font-weight: bold;
+}
+
+#contentstyle{
+	font-size: 18px;
+	border-radius: 20px;
+	padding: 20px;
+	background-color: white;
+	text-align: left;
+}
+
+*{
+	font-family: sans-serif;
+}
+
+h2{
+	color: red;
+	font-weight: bold;
+}
+
+p{
+	font-size: 17px;
+}
+
+a:link{
+	color: #0000b3;
+	text-decoration: none;
+}
+
+a:visited{
+	color: #86b300;
+}
+
+a:hover{
+	background-color: black;
+}
+
+a:active {
+    color: #0000FF;
+}
+
+.redtext{
+	color: red;
+	font-weight: 600;
+}
+
+.bluetext{
+	color: #8181F7;
+	font-weight: 800;
+}
+
+.greentext{
+	color: green;
+}
+
+.floatright{
+	float: right;
+	clear: right;
+	padding-bottom: 100px
+}
+
+.linklist{
+	float: left;
+	padding-bottom: 50px;
+	text-align: left;
+	color: blue;
+	list-style-type: circle;
+	font-weight: bold;
+}
+
+.alignleft{
+	text-align: left;
+}
+
+.button{ 
+text-align: center; 
+}
+

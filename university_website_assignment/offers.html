@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+	<style type="text/css">
+		table, th, td, tr {border: none;}
+		h3 {color:red; text-align: center; font-size: 20px;}
+		h4 {text-align: center; font-weight: bold; background-color: #ffffb3;}
+		h5 {color: #251FC4; font-size: 3em; text-align: center;}
+		p {text-align: center;}
+	</style>
+    <title> Full Stop - Offers </title>
+	
+<!-- Javascript Clock -->
+
+<script>
+
+	function startTime() {
+	
+		// declaring different variables for the clock
+		var today = new Date();
+		var h = today.getHours();
+		var m = today.getMinutes();
+		var s = today.getSeconds();
+		
+		// calling the checkTime() function for the minutes and seconds variables
+		m = checkTime(m);
+		s = checkTime(s);
+		
+		// showing what will be displayed in the header section
+		document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+		
+		// refreshing the clock every 500 milliseconds
+		var t = setTimeout(startTime, 500);
+	}
+	
+	function checkTime(i) {
+	
+		/*
+		 * if the value of the minutes or seconds variables are less than 10, then 
+		 * a zero is printed in front of the variable
+		 */
+		if (i < 10) {i = "0" + i};
+		return i;
+	}
+	
+<!-- Javascript Header Animation -->	
+	
+	var recordOne="pictures/header1.jpg";
+	
+	// function that switches between different still images
+	function animate() {
+	
+		if (recordOne=="pictures/header1.jpg")
+			recordOne="pictures/beatlesHeader.jpg";
+			
+		else if (recordOne=="pictures/beatlesHeader.jpg")
+			recordOne="pictures/header3.jpg";
+			
+		else if (recordOne=="pictures/header3.jpg")
+			recordOne="pictures/bowieHeader.jpg";
+			
+		else if (recordOne=="pictures/bowieHeader.jpg")
+			recordOne="pictures/header4.jpg";
+			
+		else if (recordOne=="pictures/header4.jpg")
+			recordOne="pictures/headerStones.jpg";
+			
+		else
+			recordOne="pictures/header1.jpg"
+		
+	document.getElementById("animatePic").src = recordOne;
+
+	// animated banner refreshes every two seconds by calling the animate() function
+	window.setTimeout("animate()", 2000)
+	}
+	
+	// function to resize the image to a larger size
+	function bigImg(pic) {
+		pic.style.height = "350px";
+		pic.style.width = "350px";
+	}
+
+	// function to resize the image to a smaller size
+	function normalImg(pic) {
+		pic.style.height = "275px";
+		pic.style.width = "275px";
+	}
+	
+	// function to change the default text of the 'text' div tag when the mouse cursor hovers over the image
+	function textOne(text) {
+		document.getElementById("text").style.color = "red";
+		document.getElementById("text").style.fontSize = "1.2em";
+		document.getElementById("text").style.fontWeight = "bold";
+		document.getElementById("text").innerHTML = "The Clash's greatest album, London Calling was released in 1979 to critical acclaim. Crossing the boundaries from punk to ska. Available on special edition CD and vinyl.";
+	}
+	
+	// function to change the default text of the 'text' div tag when the mouse cursor hovers over the image
+	function textTwo(text) {
+		document.getElementById("text").style.fontSize = "1.2em";
+		document.getElementById("text").innerHTML = "Pink Floyds' career defining magnum opus, Dark Side of the Moon was released in 1973 and became one of the highest selling albums of all time. Available on deluxe CD.";
+	}
+	
+	// function to change the default text of the 'text' div tag when the mouse cursor hovers over the image
+	function textThree(text) {
+	document.getElementById("text").style.fontSize = "1.2em";
+		document.getElementById("text").innerHTML = "The Rolling Stones' intense early 70's purple patch led to Sticky Fingers, released in 1971, and showcasing their new guitarist Mick Taylor. Available in store on CD and vinyl.";
+	}
+	
+	// function to display the original text of the 'text' div tag when a mouse cursor moves off an image
+	function originalText(text) {
+		document.getElementById("text").style.fontSize = "2.0em";
+		document.getElementById("text").innerHTML = "Here's Our Latest Special Offers!";
+	}
+	
+</script>
+</head>
+
+<body onload="startTime(); animate();">
+	<div id= body>
+    <table cellspacing = "15">
+	
+<!-- Header -->
+	
+        <tr>
+            <td colspan="3" width="1400" height="100">
+			<div id = "header">
+                <h1 style="color:#8181F7; text-decoration:overline; padding-left:100px;">
+				<img id='animatePic' src='pictures/header1.jpg' width="100" height="100">
+				&nbsp;&nbsp;&nbsp;Full Stop Record Store</h1>
+				<div id="clock" style="color:#8181F7; position:absolute; left: 1025px; top: 100px; font-weight:bold;"></div>
+			</div>
+			</td>
+        </tr>
+	
+<!-- Navigation Area -->
+		
+        <tr>
+            <td width="300" height="500">
+			<div id= "nav" style="padding-bottom: 100px;">
+                <img src="pictures/offersnav.jpg" width="225" height="225"><br>
+                <h2 class="redtext" style="text-align: center;"> On Our Site </h2>
+				
+                <ul id="navlist">
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="about.html"> About Us </a></li>
+                    <li><a href="contact.html"> Contact Information </a></li>
+                    <li><a href="offers.html"> Special Offers </a></li>
+					<li><a href="links.html"> Useful Links </a></li>
+                </ul>
+				<br><img src="pictures/offersNav2.jpg" width="225" height="375"><br>
+			</div>
+            </td>
+			
+<!-- Content Area -->
+
+            <td width="1100"><br>
+			<div id="content">
+                <h5><img src="pictures/offers1.png" width="120" height="=70"> Flash Sale 
+				<img src="pictures/offers2.jpg" width="120" height="85"></h5>
+
+				<div id="text" style="color:red;"><h1>Here's Our Latest Special Offers!</h1></div><br>
+                <table>
+                    <td width="365" height="100">
+						<span title="The Clash: London Calling">
+						<img onmouseover="textOne(text), bigImg(this)" onmouseout="originalText(text), normalImg(this)" src="pictures/clash.jpg" width="275" height="275"> 
+						</span><br>
+                            <h3> The Clash - London Calling </h3> 
+							<h4> Was &#8364;14.99 <br> Now &#8364;9.99 </h4>
+							<p>One of the greastest punk albums of it's generation, the Clash's finest album still 
+							holds a huge influence over the musicians of today.</p>
+                    </td>
+
+                    <td width="365" height="100">
+						<span title="Pink Floyd: Dark Side of the Moon">
+                        <img onmouseover="textTwo(text), bigImg(this)" onmouseout="originalText(text), normalImg(this)" src="pictures/floyd.jpg" width="275" height="275">
+						</span><br>
+                            <h3>Pink Floyd - Dark Side of the Moon </h3> 
+							<h4> Was &#8364;17.99 <br> Now &#8364;12.99 </h4>
+							<p>Pink Floyd's highest selling album and what many consider to be they're best. This 
+							record belongs in every collection.</p>
+                    </td>
+
+                    <td width="365" height="100">
+						<span title="The Rolling Stones: Sticky Fingers"> 
+                        <img onmouseover="textThree(text), bigImg(this)" onmouseout="originalText(text), normalImg(this)" src="pictures/sticky.jpg" width="275" height="275">
+						</span><br>
+                            <h3> Rolling Stones - Sticky Fingers </h3> 
+							<h4>Was &#8364;12.99 <br> Now &#8364;7.99 </h4>
+							<p>The record that captures the Stones' spirit at the height of their debauchery. With it's 
+							exquisite guitars this album should be played loud.</p>
+                    </td>
+                </table>
+			</div>	
+            </td>
+        </tr>
+		
+<!-- Footer -->
+		
+         <tr>
+            <td colspan="3" width="1400" height="150">
+			<div id="footer">
+                <h3 class="bluetext" style="font-size: 18px"> Full Stop Record Store, Shop Street, Galway. </h3>
+                <h3 class="bluetext" style="font-size: 18px"> Tel. No. (091) 123456 </h3>
+			</div>
+            </td>
+        </tr>
+    </table>
+	</div>
+</body>
+</html>

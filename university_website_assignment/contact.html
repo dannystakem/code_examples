@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css"/>	
+    <title> Full Stop - Contact Info </title>
+	
+<!-- Javascript Form Code -->	
+	
+<script type="text/javascript">
+
+	/*
+	
+	// check if all three methods together return true, and print out a string in the alert pop-up box 
+	function checkSubmission(){
+		
+		if((validateName() == true) && (validateEmail() == true) && (validateComment() == true))
+		{
+			window.alert("Thank you, we will answer your inquiry as soon as possible.");
+		}
+		else
+		{
+			return false;			
+		}
+	}
+			
+	// method that checks if the name passed in by the user has more than 10 characters
+	function validateName(){
+			
+		var nameLength = document.contentForm.name.value.length;
+	
+		if(nameLength > 10)
+		{
+			return true;
+		}
+		else
+		{
+			window.alert("Your name must be greater than 10 characters long");
+			return false;		
+		}
+	}
+	
+	*/
+	
+	/*
+	 * method that checks the user's email address to see that it contains more than 10 characters,
+	 * and that it has an '@' character and a '.' character present
+	 */
+	 
+	 /*
+	 
+	function validateEmail(){
+				
+		var email = document.contentForm.email.value;
+		var emailLength = document.contentForm.email.value.length;
+		var atNum = email.indexOf("@");
+		var dotNum = email.indexOf(".");
+				
+		if(emailLength < 10)
+		{	
+			window.alert("Your email address must be greater than 10 characters long");
+			return false;
+		}
+		else if(atNum < 1)
+		{
+			window.alert("Your email address must contain an '@' character");
+			return false;
+		}
+		else if(dotNum < 1)
+		{
+			window.alert("Your email address must contain a '.' character");
+			return false;
+		}	
+		else if((emailLength > 10) && (atNum > 0) && (dotNum > 0))
+		{
+			return true;
+		}
+	}
+			
+	// method to check than more than 25 characters have been inputted by the user in the textarea box
+	function validateComment()
+	{
+		var commentLength = document.contentForm.question.value.length;
+				
+		if(commentLength > 25)
+		{
+			return true;
+		}
+		else
+		{
+			window.alert("Your question or comment must be greater than 25 characters long");
+			return false;
+		}	
+	}
+	
+	*/
+	
+<!-- Javascript Clock -->
+
+	function startTime() {
+	
+		// declaring different variables for the clock
+		var today = new Date();
+		var h = today.getHours();
+		var m = today.getMinutes();
+		var s = today.getSeconds();
+		
+		// calling the checkTime() function for the minutes and seconds variables
+		m = checkTime(m);
+		s = checkTime(s);
+		
+		// showing what will be displayed in the header section
+		document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+		
+		// refreshing the clock every 500 milliseconds
+		var t = setTimeout(startTime, 500);
+	}
+	
+	function checkTime(i) {
+	
+		/*
+		 * if the value of the minutes or seconds variables are less than 10, then 
+		 * a zero is printed in front of the variable
+		 */
+		if (i < 10) {i = "0" + i};
+		return i;
+	}
+	
+<!-- Javascript Header Animation -->	
+	
+	var recordOne="pictures/header1.jpg";
+	
+	// function that switches between different still images
+	function animate() {
+	
+		if (recordOne=="pictures/header1.jpg")
+			recordOne="pictures/beatlesHeader.jpg";
+			
+		else if (recordOne=="pictures/beatlesHeader.jpg")
+			recordOne="pictures/header3.jpg";
+			
+		else if (recordOne=="pictures/header3.jpg")
+			recordOne="pictures/bowieHeader.jpg";
+			
+		else if (recordOne=="pictures/bowieHeader.jpg")
+			recordOne="pictures/header4.jpg";
+			
+		else if (recordOne=="pictures/header4.jpg")
+			recordOne="pictures/headerStones.jpg";
+			
+		else
+			recordOne="pictures/header1.jpg"
+		
+	document.getElementById("animatePic").src = recordOne; 
+	
+	// animated banner refreshes every two seconds by calling the animate() function
+	window.setTimeout("animate()", 2000)
+	}
+	
+</script>
+</head>
+
+<body onload="startTime(); animate();">
+    <div id= body>
+	<table cellspacing = "15">
+	
+<!-- Header -->
+	
+       <tr>
+            <td colspan="3" width="1400" height="100">
+			<div id = "header">
+                <h1 style="color:#8181F7; text-decoration:overline; padding-left:100px;">
+				<img id='animatePic' src='pictures/header1.jpg' width="100" height="100">
+				&nbsp;&nbsp;&nbsp;Full Stop Record Store</h1>
+				<div id="clock" style="color:#8181F7; position:absolute; left: 1025px; top: 100px; font-weight:bold;"></div>
+			</div>
+			</td>
+        </tr>
+		
+<!-- Navigation Area -->
+		
+        <tr>
+            <td width="275" height="600">
+			<div id="contactNav"><br><br>
+                <img src="pictures/contactnav.jpg" width="225" height="225">
+                <br>
+                <h2 class="redtext" style="text-align: center;"> On Our Site </h2>
+                <ul id="navlist">
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="about.html"> About Us </a></li>
+                    <li><a href="contact.html"> Contact Information </a></li>
+                    <li><a href="offers.html"> Special Offers </a></li>
+					<li><a href="links.html"> Useful Links </a></li>
+                </ul><br>
+				
+				<h2>Management Only</h2>
+				<form name=queries action="showContactUs.php" method="post">
+				<p>User Name: (required)</p>
+				<input type=text name=userName value="" size=30>
+				<p>Password: (required)</p>
+				<input type=password name=password value="" size=30>
+				<br><br>
+				<div class = "button">
+				<input type="submit" name=button1 value="Submit">
+				</div><br>
+				</form>
+				
+				<h2>View Stock</h2>
+				<form name=queries action="editStock.php" method="post">
+				<p>User Name: (required)</p>
+				<input type=text name=userName value="" size=30>
+				<p>Password: (required)</p>
+				<input type=password name=password value="" size=30>
+				<br><br>
+				<div class = "button">
+				<input type="submit" name=button1 value="Submit">
+				</div>
+				</form>
+			</div>
+            </td>
+			
+<!-- Content Area -->
+			
+            <td width="1100" height="500">
+			<div id="content">
+				<br>
+                <h2 class="alignleft"> Contact Information </h2>
+                <dl class="alignleft">
+					<img class= "floatright" src="pictures/contactmain.jpg" width="500" height="300">
+					
+                    <dt> Fulfilment Executive </dt>
+					<dd> Name : John Smith <br>
+						 Phone No. : 087-9876543 <br>
+						 Email: johnsmith@gmail.com <br>
+					</dd>
+					<br>
+					<dt> Marketing Officer </dt>
+					<dd> Name : Mary Reilly <br>
+						 Phone No. : 085-6587562 <br>
+						 Email: maryreilly@gmail.com <br>
+					</dd>
+					<br>
+                    <dt> Secretary </dt>
+					<dd> Name : Jack Roberts <br>
+						 Phone No. : 086-5486325 <br>
+						 Email: jackroberts@hotmail.com <br>
+					</dd>
+					<br>
+                </dl>
+			</div><br>
+			
+<!-- Form Area -->
+
+			<div id="contentstyle">
+			<h2 style="text-align:center;">We welcome all feedback given to our business</h2>
+			<form name="contentForm" method="post" action="contactForm.php">
+
+			<table border="0">
+				<td width="450" height="300"><br><br>
+				<img style="padding-bottom:100px" src="pictures/form.jpg" width="400" height="250">
+				</td>
+				
+				<td width="400" height="300">
+				Please enter your name:<br>
+				<input type="text" name="name" value="" size="20">
+				<br><br>Please enter your email:<br>
+				<input type="text" name="email" value="" size="20">
+				
+				<br><br><label>Please select a category:</label><br>
+					<select id=myList name="list">
+						<option value="0">Sales</option>
+						<option value="1">Returns</option>
+						<option value="2">Orders</option>
+						<option value="3">Shipping</option>
+						<option value="4">Complaints</option>
+						<option value="5">Other</option>
+					</select><br><br>
+				
+				Please leave a comment or question:<br>
+				<textarea name="question" rows="10" cols="50"></textarea><br><br>
+				
+				<div class = "button">
+					<input type="submit" name="button" value="Submit"> <!-- onClick="return checkSubmission()"> -->
+				</div>
+				</td>
+			</table>
+			</form>
+			</div>			
+			</td>
+        </tr>
+		
+<!-- Footer -->
+		
+        <tr>
+            <td colspan="3" width="1400" height="150">
+			<div id="footer" class="bluetext">
+                <h3> Full Stop Record Store, Shop Street, Galway. </h3>
+                <h3> Tel. No. (091) 123456 </h3>
+			</div>
+            </td>
+        </tr>
+    </table>
+	</div>
+</body>
+</html>

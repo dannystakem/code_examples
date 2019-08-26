@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <title> Full Stop - About Us </title>
+	
+<!-- Javascript Clock -->
+
+<script>
+
+	function startTime() {
+	
+		// declaring different variables for the clock
+		var today = new Date();
+		var h = today.getHours();
+		var m = today.getMinutes();
+		var s = today.getSeconds();
+		
+		// calling the checkTime() function for the minutes and seconds variables
+		m = checkTime(m);
+		s = checkTime(s);
+		
+		// showing what will be displayed in the header section
+		document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+		
+		// refreshing the clock every 500 milliseconds
+		var t = setTimeout(startTime, 500);
+	}
+	
+	function checkTime(i) {
+	
+		/*
+		 * if the value of the minutes or seconds variables are less than 10, then 
+		 * a zero is printed in front of the variable
+		 */
+		if (i < 10) {i = "0" + i};
+		return i;
+	}
+	
+<!-- Javascript Header Animation -->	
+	
+	var recordOne="pictures/header1.jpg";
+	
+	// function that switches between different still images
+	function animate() {
+	
+		if (recordOne=="pictures/header1.jpg")
+			recordOne="pictures/beatlesHeader.jpg";
+			
+		else if (recordOne=="pictures/beatlesHeader.jpg")
+			recordOne="pictures/header3.jpg";
+			
+		else if (recordOne=="pictures/header3.jpg")
+			recordOne="pictures/bowieHeader.jpg";
+			
+		else if (recordOne=="pictures/bowieHeader.jpg")
+			recordOne="pictures/header4.jpg";
+			
+		else if (recordOne=="pictures/header4.jpg")
+			recordOne="pictures/headerStones.jpg";
+			
+		else
+			recordOne="pictures/header1.jpg"
+		
+	document.getElementById("animatePic").src = recordOne; 
+	
+	// animated banner refreshes every two seconds by calling the animate() function
+	window.setTimeout("animate()", 2000)
+	}
+	
+</script>
+</head>
+
+<body onload="startTime(); animate();">
+    <div id= body>
+	<table cellspacing = "15">
+	
+<!-- Header -->
+	
+		<tr>
+            <td colspan="3" width="1400" height="100">
+			<div id = "header">
+                <h1 style="color:#8181F7; text-decoration:overline; padding-left:100px;">
+				<img id='animatePic' src='pictures/header1.jpg' width="100" height="100">
+				&nbsp;&nbsp;&nbsp;Full Stop Record Store</h1>
+				<div id="clock" style="color:#8181F7; position:absolute; left: 1025px; top: 100px; font-weight:bold;"></div>
+			</div>
+			</td>
+        </tr>
+		
+<!-- Navigation Area -->
+		
+         <tr>
+            <td width="250" height="600">
+			<div id= "nav" style="padding-bottom: 200px;">
+                <img src="pictures/navabout.jpg" width="225" height="180">
+                <br>
+                <h2 class="redtext" style="text-align: center;"> On Our Site </h2>
+                <ul id="navlist">
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="about.html"> About Us </a></li>
+                    <li><a href="contact.html"> Contact Information </a></li>
+                    <li><a href="offers.html"> Special Offers </a></li>
+					<li><a href="links.html"> Useful Links </a></li>
+                </ul>
+			</div>
+            </td>
+
+			
+<!-- Main Content Area -->
+			
+            <td width="575" height="600">
+			<div id = "content">
+                <img src="pictures/aboutmain.jpg" width="475" height="250">
+                <h2> Welcome </h2> 
+				<p>Full Stop Record Store has been in business for over twenty years, supplying the local 
+				community with the finest sounds in music available. In the last couple of years <span class="greentext">we have
+				expanded our business online</span>, so now you can get the same great service you get in our 
+				store on our website. Whether it be the latest hits or something more esoteric from the not 
+				too distant past, we have it all. We stock a wide range of music on CD and vinyl, as well as 
+				the latest musical releases on DVD and Blu-Ray. <span class="greentext">Come into us today and have a look for yourself</span>, 
+				or just browse our website, we regularly have great online sales. Either way we don't really 
+				mind, and if you like our style then recommend us to a friend.</p>
+			</div>
+			</td>
+			
+<!-- Side Content Area -->
+
+            <td width="480" height="600">
+			<div id= "sidecon">
+                <center><img src="pictures/aboutmission.jpg" width="325" height="250"></center>
+                <h2 style="text-align:center"> Our Mission Statement </h2> 
+				<p>We aim to provide our customers with the best possible experience available when they come 
+				into our store or use our website. <span class="greentext">All our staff have a diverse range of musical interests 
+				and are more than happy to answer any questions you might have</span>, be it face to face or by email. 
+				Our knowledgeable staff can offer their own personal recommendations for anyone looking to buy 
+				a gift for a loved one. In our store you can browse our wares at your own leisure and if you're
+				not happy with your purchase, you can get a refund or an exchange with a valid receipt. <span class="greentext">We always 
+				aim to please.</span></p>
+			</div>
+            </td>
+
+        </tr>
+		
+<!-- Footer -->
+		
+        <tr>
+            <td colspan="3" width="1400" height="150">
+			<div id="footer" class="bluetext">
+                <h3> Full Stop Record Store, Shop Street, Galway. </h3>
+                <h3> Tel. No. (091) 123456 </h3>
+			</div>
+            </td>
+        </tr>
+    </table>
+	</div>
+</body>
+</html>

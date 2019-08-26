@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+    <title> Full Stop - Links </title>
+
+<!-- Javascript Clock -->
+
+<script>
+
+	function startTime() {
+	
+		// declaring different variables for the clock
+		var today = new Date();
+		var h = today.getHours();
+		var m = today.getMinutes();
+		var s = today.getSeconds();
+		
+		// calling the checkTime() function for the minutes and seconds variables
+		m = checkTime(m);
+		s = checkTime(s);
+		
+		// showing what will be displayed in the header section
+		document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+		
+		// refreshing the clock every 500 milliseconds
+		var t = setTimeout(startTime, 500);
+	}
+	
+	function checkTime(i) {
+	
+		/*
+		 * if the value of the minutes or seconds variables are less than 10, then 
+		 * a zero is printed in front of the variable
+		 */
+		if (i < 10) {i = "0" + i};
+		return i;
+	}
+	
+<!-- Javascript Header Animation -->	
+	
+	var recordOne="pictures/header1.jpg";
+	
+	// function that switches between different still images
+	function animate() {
+	
+		if (recordOne=="pictures/header1.jpg")
+			recordOne="pictures/beatlesHeader.jpg";
+			
+		else if (recordOne=="pictures/beatlesHeader.jpg")
+			recordOne="pictures/header3.jpg";
+			
+		else if (recordOne=="pictures/header3.jpg")
+			recordOne="pictures/bowieHeader.jpg";
+			
+		else if (recordOne=="pictures/bowieHeader.jpg")
+			recordOne="pictures/header4.jpg";
+			
+		else if (recordOne=="pictures/header4.jpg")
+			recordOne="pictures/headerStones.jpg";
+			
+		else
+			recordOne="pictures/header1.jpg"
+		
+	document.getElementById("animatePic").src = recordOne; 
+	
+	// animated banner refreshes every two seconds by calling the animate() function
+	window.setTimeout("animate()", 2000)
+	}
+	
+</script>
+</head>
+
+<body onload="startTime(); animate();">
+	<div id= body>
+	<table cellspacing = "15">
+	
+<!-- Header -->
+	
+		<tr>
+            <td colspan="3" width="1400" height="100">
+			<div id = "header">
+                <h1 style="color:#8181F7; text-decoration:overline; padding-left:100px;">
+				<img id='animatePic' src='pictures/header1.jpg' width="100" height="100">
+				&nbsp;&nbsp;&nbsp;Full Stop Record Store</h1>
+				<div id="clock" style="color:#8181F7; position:absolute; left: 1025px; top: 100px; font-weight:bold;"></div>
+			</div>
+			</td>
+        </tr>
+		
+<!-- Navigation Area -->
+		
+          <tr>
+            <td width="275" height="600">
+			<div id= "nav">
+                <img src="pictures/linksnav.jpg" width="225" height="250"><br>
+                <h2 class="redtext" style="text-align: center;"> On Our Site </h2>
+                <ul id="navlist">
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="about.html"> About Us </a></li>
+                    <li><a href="contact.html"> Contact Information </a></li>
+                    <li><a href="offers.html"> Special Offers </a></li>
+					<li><a href="links.html"> Useful Links </a></li>
+                </ul>
+			</div>
+            </td>
+
+<!-- Content Area -->
+			
+            <td width="1100" height="600">
+			<div id = "content"><br>
+                <h2 style="text-align: left;"> Useful Links </h2>
+				
+                <ol class="linklist">
+                    <li><a href="http://www.amazon.co.uk" target="_blank"> Amazon UK </a></li>
+                    <br>
+                    <li><a href="http://www.theguardian.com" target="_blank"> The Guardian </a></li>
+                    <br>
+                    <li><a href="http://www.irishtimes.com" target="_blank"> The Irish Times </a></li>
+                    <br>
+                    <li><a href="http://www.spotify.com" target="_blank"> Spotify </a></li>
+                    <br>
+                    <li><a href="http://www.apple.com/ie/itunes/" target="_blank"> Apple iTunes </a></li>
+                    <br>
+                    <li><a href="http://www.mojo4music.com/" target="_blank"> Mojo Magazine </a></li>
+                    <br>
+                    <li><a href="http://www.qthemusic.com/" target="_blank"> Q Magazine </a></li>
+                    <br>
+                </ol>
+				
+				<img style="padding-bottom: 50px;" src="pictures/linksmain.jpg" width="550" height="350">
+			</div>
+            </td>
+        </tr>
+		
+<!-- Footer -->
+		
+        <tr>
+            <td colspan="3" width="1400" height="150">
+			<div id="footer" class="bluetext">
+                <h3> Full Stop Record Store, Shop Street, Galway. </h3>
+                <h3> Tel. No. (091) 123456 </h3>
+			</div>
+            </td>
+        </tr>
+    </table>
+	</div>
+</body>
+</html>
