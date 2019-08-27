@@ -1,3 +1,8 @@
+"""
+Small script that adds a retention period to Cloudwatch logs in 
+an AWS account, otherwise they remain indefinitely by default
+"""
+
 import boto3
 import argparse
 
