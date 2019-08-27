@@ -6,7 +6,7 @@ an AWS account, otherwise they remain indefinitely by default
 import boto3
 import argparse
 
-def addLogRetention(retention_length):
+def add_log_retention(retention_length):
     client = boto3.client('logs')
     response = client.describe_log_groups()
     log_group_list = []
@@ -28,4 +28,4 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--length', type=int, help='Number of days to set Log Retention')
     args = parser.parse_args()
-    addLogRetention(args.length)
+    add_log_retention(args.length)
